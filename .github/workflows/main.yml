@@ -19,7 +19,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          npm install -g marked cheerio axios
+          npm install -g marked axios cheerio
       
       - name: Fetch Markdown from Rentry and convert to HTML
         run: |
@@ -38,7 +38,7 @@ jobs:
             .then(response => {
               if (response.status === 200) {
                 const $ = cheerio.load(response.data);
-                const markdown = $('div.CodeMirror-code').text();
+                const markdown = $('textarea#text').text();
 
                 // Convert Markdown to HTML
                 const htmlContent = marked.parse(markdown);
