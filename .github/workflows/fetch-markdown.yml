@@ -1,4 +1,4 @@
-name: Fetch Markdown Content
+name: Fetch and Convert Markdown
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allows manual triggering
 
 jobs:
-  fetch:
+  fetch-and-convert:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -14,13 +14,17 @@ jobs:
 
       - name: Fetch Markdown content
         run: |
-          # Use curl or a script to fetch the Markdown content
           curl -o content.md "https://rentry.co/freemediafuckyeah/raw"
+
+      - name: Convert Markdown to HTML
+        run: |
+          npm install marked
+          node -e "const marked = require('marked'); const fs = require('fs'); const content = fs.readFileSync('content.md', 'utf8'); fs.writeFileSync('index.html', marked(content));"
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add content.md
-          git commit -m "Update Markdown content"
+          git add content.md index.html
+          git commit -m "Update Markdown and HTML content"
           git push
