@@ -19,7 +19,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          npm install -g marked cheerio
+          npm install -g marked cheerio axios
       
       - name: Fetch Markdown from Rentry and convert to HTML
         run: |
@@ -28,7 +28,6 @@ jobs:
           const marked = require('marked');
           const cheerio = require('cheerio');
           const fs = require('fs');
-          const path = require('path');
 
           // Configuration
           const rentryUrl = 'https://rentry.co/freemediafuckyeah/edit';
@@ -39,12 +38,12 @@ jobs:
             .then(response => {
               if (response.status === 200) {
                 const $ = cheerio.load(response.data);
-                const markdown = $('div.CodeMirror-lines').text();
+                const markdown = $('div.CodeMirror-code').text();
 
                 // Convert Markdown to HTML
                 const htmlContent = marked.parse(markdown);
 
-                // Add styling and footer
+                // Add styling, dark mode, and footer
                 const currentTime = new Date().toUTCString();
                 const fullHtml = `
                   <!DOCTYPE html>
@@ -55,6 +54,19 @@ jobs:
                     <title>Free Media Library</title>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
                     <style>
+                      :root {
+                        --bg-color: #fff;
+                        --text-color: #000;
+                      }
+                      [data-theme="dark"] {
+                        --bg-color: #1a1a1a;
+                        --text-color: #fff;
+                      }
+                      body {
+                        background-color: var(--bg-color);
+                        color: var(--text-color);
+                        transition: background-color 0.3s, color 0.3s;
+                      }
                       .markdown-body {
                         box-sizing: border-box;
                         min-width: 200px;
@@ -67,16 +79,51 @@ jobs:
                           padding: 15px;
                         }
                       }
+                      #search {
+                        margin: 20px 0;
+                        padding: 10px;
+                        width: 100%;
+                        max-width: 400px;
+                        font-size: 16px;
+                      }
+                      .highlight {
+                        background-color: yellow;
+                      }
                     </style>
                   </head>
                   <body>
                     <div class="markdown-body">
+                      <input type="text" id="search" placeholder="Search...">
                       ${htmlContent}
                     </div>
                     <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 0.8em; color: #777;">
                       <p>Content sourced from <a href="${rentryUrl}" target="_blank">Rentry.co/freemediafuckyeah</a><br>
                       Last updated: ${currentTime}</p>
+                      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
                     </footer>
+                    <script>
+                      // Dark mode toggle
+                      function toggleDarkMode() {
+                        const body = document.body;
+                        body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+                      }
+
+                      // Search functionality
+                      const searchInput = document.getElementById('search');
+                      const contentDiv = document.querySelector('.markdown-body');
+                      searchInput.addEventListener('input', () => {
+                        const searchTerm = searchInput.value.toLowerCase();
+                        const elements = contentDiv.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
+                        elements.forEach(element => {
+                          const text = element.textContent.toLowerCase();
+                          if (text.includes(searchTerm)) {
+                            element.innerHTML = text.replace(new RegExp(searchTerm, 'gi'), match => \`<span class="highlight">\${match}</span>\`);
+                          } else {
+                            element.innerHTML = text;
+                          }
+                        });
+                      });
+                    </script>
                   </body>
                   </html>
                 `;
@@ -85,7 +132,7 @@ jobs:
                 fs.writeFileSync(outputFile, fullHtml);
                 console.log('Successfully created index.html');
               } else {
-                throw new Error(`Failed to fetch ${rentryUrl}: HTTP ${response.status}`);
+                throw new Error(\`Failed to fetch \${rentryUrl}: HTTP \${response.status}\`);
               }
             })
             .catch(error => {
