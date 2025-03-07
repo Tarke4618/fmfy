@@ -1,0 +1,115 @@
+name: Rentry to GitHub Pages
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # Run every 12 hours
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  fetch-and-convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: |
+          npm install -g marked cheerio
+      
+      - name: Fetch Markdown from Rentry and convert to HTML
+        run: |
+          node - <<EOF
+          const axios = require('axios');
+          const marked = require('marked');
+          const cheerio = require('cheerio');
+          const fs = require('fs');
+          const path = require('path');
+
+          // Configuration
+          const rentryUrl = 'https://rentry.co/freemediafuckyeah/edit';
+          const outputFile = 'index.html';
+
+          // Fetch the edit page
+          axios.get(rentryUrl)
+            .then(response => {
+              if (response.status === 200) {
+                const $ = cheerio.load(response.data);
+                const markdown = $('div.CodeMirror-lines').text();
+
+                // Convert Markdown to HTML
+                const htmlContent = marked.parse(markdown);
+
+                // Add styling and footer
+                const currentTime = new Date().toUTCString();
+                const fullHtml = `
+                  <!DOCTYPE html>
+                  <html lang="en">
+                  <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Free Media Library</title>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+                    <style>
+                      .markdown-body {
+                        box-sizing: border-box;
+                        min-width: 200px;
+                        max-width: 980px;
+                        margin: 0 auto;
+                        padding: 45px;
+                      }
+                      @media (max-width: 767px) {
+                        .markdown-body {
+                          padding: 15px;
+                        }
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="markdown-body">
+                      ${htmlContent}
+                    </div>
+                    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 0.8em; color: #777;">
+                      <p>Content sourced from <a href="${rentryUrl}" target="_blank">Rentry.co/freemediafuckyeah</a><br>
+                      Last updated: ${currentTime}</p>
+                    </footer>
+                  </body>
+                  </html>
+                `;
+
+                // Save the HTML file
+                fs.writeFileSync(outputFile, fullHtml);
+                console.log('Successfully created index.html');
+              } else {
+                throw new Error(`Failed to fetch ${rentryUrl}: HTTP ${response.status}`);
+              }
+            })
+            .catch(error => {
+              console.error('Error fetching or processing content:', error.message);
+              process.exit(1);
+            });
+          EOF
+      
+      - name: Check for created HTML files
+        id: check_files
+        run: |
+          if [ -f "index.html" ]; then
+            echo "html_exists=true" >> $GITHUB_OUTPUT
+            echo "HTML files generated successfully."
+          else
+            echo "html_exists=false" >> $GITHUB_OUTPUT
+            echo "No HTML files were generated. Check the logs for errors."
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_files.outputs.html_exists == 'true'
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add index.html
+          git commit -m "Update HTML from Rentry.co $(date -u +"%Y-%m-%d %H:%M UTC")" || echo "No changes to commit"
+          git push
