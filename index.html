@@ -1,70 +1,579 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rentry Markdown to HTML</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-        }
-        body.dark-mode {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        #searchInput {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        .highlight {
-            background-color: yellow;
-        }
-        #darkModeToggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <button id="darkModeToggle">Toggle Dark Mode</button>
-    <input type="text" id="searchInput" placeholder="Search...">
-    <div id="content"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // Fetch and display Markdown content
-        fetch('content.md')
-            .then(response => response.text())
-            .then(markdown => {
-                document.getElementById('content').innerHTML = marked(markdown);
-            });
-
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const content = document.getElementById('content').innerHTML;
-            const highlightedContent = content.replace(
-                new RegExp(searchTerm, 'gi'),
-                match => `<span class="highlight">${match}</span>`
-            );
-            document.getElementById('content').innerHTML = highlightedContent;
-        });
-
-        // Dark mode toggle
-        document.getElementById('darkModeToggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
-</body>
-</html>
+<hr>
+<p><strong>Table of Contents</strong></p>
+<hr>
+<h2 id="nsfw-indexes">NSFW Indexes</h2>
+<ul>
+<li>🌐 <strong><a href="https://www.reddit-doesnt-like-this.site/">Reddit Doesn&#39;t Like This Site</a></strong></li>
+<li>🌐 <strong><a href="https://www.reddit.com/r/NSFW411/wiki/index">NSFW Subreddits</a></strong>, <a href="http://electronsoup.net/nsfw_subreddits/">2</a>, <a href="https://bin.disroot.org/?81af22c09e92865d#FYLXmjaKbaojaELwAv1szcfy7rahuA77ntnFu2HBEBGf">3</a>, <a href="https://redd.it/brypgf">4</a> or <a href="https://www.reddit.com/r/multihub/top/?sort=top&amp;t=year">Multireddits</a></li>
+<li><a href="http://pornbox.org/">PornBox</a></li>
+<li><a href="https://onepornlist.com/">One Porn List</a></li>
+<li><a href="https://bigpornlist.net/">BigPornList</a></li>
+<li><a href="https://www.mrporngeek.com/">MrPornGeek</a></li>
+<li><a href="https://thebestfetishsites.com/">The Best Fetish Sites</a></li>
+<li><a href="https://pornlist18.com/">PornList18</a></li>
+<li><a href="https://indianpornlist.com/">IndianPornList</a></li>
+<li><a href="https://www.tommys-bookmarks.com/">Tommy&#39;s Bookmarks</a></li>
+<li><a href="https://pastebin.com/70C3uxJv">ThePornDude</a></li>
+</ul>
+<hr>
+<h2 id="streaming">Streaming</h2>
+<ul>
+<li>⭐ <strong><a href="https://hqporner.com/">HQPorner</a></strong></li>
+<li>⭐ <strong><a href="https://www.sxyprn.com/">SexyPorn</a></strong></li>
+<li>⭐ <strong><a href="https://watchporn.to">WatchPorn.to</a></strong></li>
+<li>⭐ <strong><a href="https://pornhoarder.tv/">PornHoarder</a></strong>, <a href="https://pornhoarder.org/">2</a></li>
+<li>⭐ <strong><a href="https://noodlemagazine.com">Noodlemagazine</a></strong>, <a href="https://mat6tube.com/">2</a>, <a href="https://18.tyler-brown.com/">3</a>, <a href="https://waterdamagesandiego.org/">4</a>, <a href="https://hot.exporntoons.net/">5</a>, <a href="https://actionviewphotography.com/">6</a>, <a href="https://ukdevilz.com/">7</a> - Search Engine</li>
+<li>⭐ <strong><a href="https://www.ixxx.com/">iXXX</a></strong> or <a href="https://www.findtubes.com/">FindTubes</a> - Aggregator</li>
+<li><a href="https://cse.google.com/cse?cx=6c02fb377e50d493c">Full Length Porn CSE</a> - Search Engine</li>
+<li><a href="https://www.eporner.com/">EPorner</a></li>
+<li><a href="https://www.xvideos.com/">XVideos</a></li>
+<li><a href="https://www.playhdporn.com/">PlayHDPorn</a></li>
+<li><a href="https://spankbang.com/">SpankBang</a></li>
+<li><a href="https://neporn.com/">neporn</a></li>
+<li><a href="https://www.freepornvideos.xxx/">FreePornVideos</a></li>
+<li><a href="https://bananamovies.org/">BananaMovies</a></li>
+<li><a href="https://xhamster.com/">xHamster</a></li>
+<li><a href="https://pastebin.com/6AXdQf9Z">The NSFW Zone</a></li>
+<li><a href="https://www.pornhub.com/">PornHub</a> / <a href="https://sleazyfork.org/en/scripts/380711">Add Features</a>, <a href="https://codeberg.org/aolko/userscripts/wiki/PH-toolbox">2</a> / <a href="https://gist.github.com/Riboe/58acabe04abe74421e88b4269cbdf41e">DL Script</a></li>
+<li><a href="https://www.tnaflix.com/">TNAFlix</a></li>
+<li><a href="https://pornxp.org/">PornXP</a></li>
+<li><a href="https://www.youporn.com/">Youporn</a></li>
+<li><a href="https://www.porntrex.com/">PornTrex</a></li>
+<li><a href="https://some.porn/">SomePorn</a></li>
+<li><a href="https://wapbold.net/">wapbold</a></li>
+<li><a href="https://www.hotmovix.com/">Hotmovix</a></li>
+<li><a href="https://www.youjizz.com/">Youjizz</a></li>
+<li><a href="https://iporntv.net/">iPornTV</a> / Use Adblocker</li>
+<li><a href="https://pornobae.com/">PornoBae</a></li>
+<li><a href="https://www.jizzbunker.com/">Jizzbunker</a></li>
+<li><a href="https://pornken.com/">pornken</a></li>
+<li><a href="https://www.heavy-r.com/">Heavy-R</a></li>
+<li><a href="https://eroticmoviesonline.me/">EroticMovies</a></li>
+<li><a href="https://www.xnxx.com/">XNXX</a> / <a href="https://forum.xnxx.com/">Forum</a></li>
+<li><a href="https://pornobae.com/">Pornobae</a></li>
+<li><a href="https://thepornarea.com/">ThePornArea</a></li>
+<li><a href="https://www.drtuber.desi/">DrTuber</a></li>
+<li><a href="https://www.porndish.com/">Porndish</a></li>
+<li><a href="https://www.analdin.com/">Analdin</a></li>
+<li><a href="https://www.tube8.com/">Tube8</a></li>
+<li><a href="https://www.xmegadrive.com/">xMegaDrive</a>, <a href="https://video.xmegadrive.com/">2</a></li>
+<li><a href="https://porndoe.com/">Porndoe</a></li>
+<li><a href="https://www.intporn.com/">Intporn</a></li>
+<li><a href="https://siska.video/">Siska</a></li>
+<li><a href="https://www.porndig.com/">Porndig</a></li>
+<li><a href="https://anysex.com/">anysex.com</a></li>
+<li><a href="https://hd.sex-empire.org/en/">Sex-Empire</a></li>
+<li><a href="https://enwww.ifuqyou.com/">ifuqyou</a></li>
+<li><a href="https://www.pornxpert.com/">PornXpert</a></li>
+<li><a href="https://www.pornhd3x.tv/">PornHD3x</a></li>
+<li><a href="https://motherless.com/">Motherless</a></li>
+<li><a href="https://www.cliphunter.com/">ClipHunter</a></li>
+<li><a href="https://onlinepornhub.net/">OnlinePornHub</a></li>
+<li><a href="https://beeg.com/">Beeg</a></li>
+<li><a href="https://www.redtube.com/">Redtube</a></li>
+<li><a href="https://xgomovies.cc/">xGoMovies</a></li>
+<li><a href="https://txxx.com/">txxx</a></li>
+<li><a href="https://vid123.net/">Vid123</a></li>
+<li><a href="https://www.adultism.com/">Adultism</a>, <a href="https://www.erome.com/">Erome</a>, <a href="https://www.youramateurporn.com/">YourAmateurPorn</a>, <a href="https://www.terk.nl/">Terk</a> or <a href="https://hclips.com/">HClips</a> - Amateur Porn</li>
+<li><a href="https://xxxgr.net/">xxxgr</a> - Greek Porn</li>
+<li><a href="https://pornfreex.app/">PornFreeX</a>, <a href="https://porn-app.com/">Porn App</a> or <a href="https://github.com/Kisspeace/NsfwBox">NsfwBox</a> - Android Porn Apps</li>
+</ul>
+<hr>
+<h3 id="adult-movies-grindhouse">Adult Movies / Grindhouse</h3>
+<ul>
+<li>⭐ <strong><a href="https://cse.google.com/cse?cx=006516753008110874046:3-svpblbro8">NSFW Movie Site Search</a></strong> / <a href="https://cse.google.com/cse?cx=b5a63746fc84a456d">2</a></li>
+<li>⭐ <strong><a href="https://noodlemagazine.com">Noodlemagazine</a></strong>, <a href="https://mat6tube.com/">2</a>, <a href="https://18.tyler-brown.com/">3</a>, <a href="https://waterdamagesandiego.org/">4</a>, <a href="https://hot.exporntoons.net/">5</a>, <a href="https://actionviewphotography.com/">6</a>, <a href="https://ukdevilz.com/">7</a> - Search Engine</li>
+<li>⭐ <strong><a href="https://www.film1k.com/">Film1k</a></strong></li>
+<li>⭐ <strong><a href="https://rarelust.com/movies-index/">RareLust</a></strong></li>
+<li>⭐ <strong><a href="https://pandamovies.pw/">PandaMovies</a></strong></li>
+<li>⭐ <strong><a href="https://www.sleazemovies.com/">SleazeMovies</a></strong></li>
+<li><a href="https://eroticfilm.tv/">EroticFilm</a></li>
+<li><a href="https://mangoporn.net/">MangoPorn</a></li>
+<li><a href="https://eroticmv.com/">EroticMV</a></li>
+<li><a href="https://t.me/itseroma">itseroma</a></li>
+<li><a href="https://uiiumovies.net/">UiiU Movies</a></li>
+<li><a href="https://www.erogarga.com/">EroGarga</a></li>
+<li><a href="https://www.eroticage.net/">EroticAge</a></li>
+<li><a href="http://www.vintageclassix.com/">VintageClassix</a></li>
+<li><a href="https://cat3film.com/">Cat3Film</a></li>
+<li><a href="https://en.paradisehill.cc/">paradisehill</a></li>
+<li><a href="https://cat3movie.org/">Cat3Movies</a></li>
+<li><a href="https://pornxtheatre.com/">pornxtheatre</a></li>
+<li><a href="https://adultload.ws/">AdultLoad</a></li>
+<li><a href="https://wipfilms.net/">WIPFilms</a></li>
+<li><a href="https://www.effedupmovies.com/">EffedUpMovies</a> - Disturbing Horror Movies</li>
+</ul>
+<hr>
+<h3 id="asian-jav">Asian / JAV</h3>
+<ul>
+<li>⭐ <strong><a href="https://sextb.net/">SexTB</a></strong></li>
+<li>⭐ <strong><a href="https://supjav.com/">SupJav</a></strong></li>
+<li>⭐ <strong><a href="https://javseen.tv/">JAVSeen</a></strong></li>
+<li>⭐ <strong><a href="https://javgg.net/">JAVGG</a></strong></li>
+<li>⭐ <strong><a href="https://jav.guru/">JavGuru</a></strong></li>
+<li><a href="https://javtiful.com/">Javtiful</a></li>
+<li><a href="https://missav.ws/dm17/en">missav</a>, <a href="https://missav123.com/dm19/en">2</a>, <a href="https://missav.ws/dm19/en">3</a></li>
+<li><a href="https://www2.javhdporn.net/">JavHDPorn</a></li>
+<li><a href="https://123av.com/">nJAV</a>, <a href="https://njav.tv/">2</a></li>
+<li><a href="https://krx18.com/">KRX18</a></li>
+<li><a href="https://senzuri.tube/">Senzuri Tube</a></li>
+<li><a href="https://javfan.one/">JavFan</a></li>
+<li><a href="https://rou.video/">rou.video</a></li>
+<li><a href="https://asiangirl.porn/">AsianGirl</a>, <a href="https://ppp.porn/">2</a></li>
+<li><a href="https://javdoe.sh/">javdoe</a></li>
+<li><a href="https://playav.tv/">playav</a></li>
+<li><a href="https://www.dnaav.com/">dnaav</a></li>
+<li><a href="https://www5.javmost.com/">JAVMost</a></li>
+<li><a href="https://javfinder.sb/">Javfinder</a></li>
+<li><a href="https://avjoy.me/">avjoy</a></li>
+<li><a href="https://s9.watchfreejavonline.co/">WatchFreeJAV</a></li>
+<li><a href="https://91porna.com/">91Porna</a></li>
+<li><a href="https://opjav.com/">OPJAV</a></li>
+<li><a href="https://91rb.net/">91rb</a></li>
+<li><a href="https://asian.javfun.me/">JavFun</a></li>
+<li><a href="https://watchjavonline.com/">WatchJAVonline</a></li>
+<li><a href="https://www.javbangers.com/">JavBangers</a></li>
+<li><a href="https://javenglish.cc/">JavEnglish</a></li>
+<li><a href="https://7mmtv.sx/">7MMTV</a></li>
+<li><a href="https://topdrama.net/adult-movies/">TopDrama</a></li>
+<li><a href="https://jav-angel.net/">Jav-angel</a></li>
+<li><a href="https://koreanpornmovie.com/">KoreanPornMovies</a> - Korean</li>
+<li><a href="https://cosplay.jav.pw/">cosplay.jav</a> - Cosplay Porn</li>
+<li><a href="https://www.javlibrary.com/en/">JAVLibrary</a> - Video  / Star Database</li>
+</ul>
+<hr>
+<h3 id="hentai-anime">Hentai Anime</h3>
+<ul>
+<li>🌐 <strong><a href="https://wotaku.wiki/nsfw#anime">Wotaku</a></strong> - Hentai Anime Index / <a href="https://discord.gg/vShRGx8ZBC">Discord</a></li>
+<li>🌐 <strong><a href="https://theindex.moe/library/hentai">The Index</a></strong> or <a href="https://besthentaisites.github.io/">Best Hentai Sites</a> - Hentai Site Lists</li>
+<li>🌐 <strong><a href="https://everythingmoe.com/?nsfw=true#section-hentai">EverythingMoe</a></strong>, <a href="https://everythingmoe.org/?nsfw=true#section-hentai">2</a> - Hentai Sites Index</li>
+<li>🌐 <strong><a href="https://rentry.co/coom">/cumg/</a></strong> - Hentai Resources</li>
+<li>⭐ <strong><a href="https://sukebei.nyaa.si/">Nyaa Sukebei</a></strong> - Hentai Torrents</li>
+<li>⭐ <strong><a href="https://www.anime-sharing.com/#downloads-requests">Anime-Sharing</a></strong> - Hentai DDL</li>
+<li>⭐ <strong><a href="https://oppai.stream/">Oppai.Stream</a></strong> - Hentai Streaming</li>
+<li>⭐ <strong><a href="https://hstream.moe/">hstream.moe</a></strong> - Hentai Streaming / <a href="https://discord.com/invite/yAqgVKNgG5">Discord</a></li>
+<li>⭐ <strong><a href="https://hanime.tv/">Hanime.tv</a></strong> - Hentai Streaming</li>
+<li>⭐ <strong><a href="https://hentaiworld.tv/">HentaiWorld</a></strong> - Hentai Streaming / <a href="https://discord.com/invite/uyHFDgcUJR">Discord</a></li>
+<li>⭐ <strong><a href="https://porcore.com/">PorCore</a></strong> - 3D Porn</li>
+<li>⭐ <strong><a href="https://porn3dx.com/">Porn3DX</a></strong> - 3D Porn</li>
+<li>⭐ <strong><a href="https://nsfwr34.com/">NSFW Rule 34</a></strong> - Western Hentai Streaming</li>
+<li>⭐ <strong><a href="https://github.com/gan-of-culture/get-sauce">get-sauce</a></strong> - Hentai CLI Downloader</li>
+<li><a href="https://ohentai.org/">Ohentai</a> - Hentai Streaming / <a href="https://discord.com/invite/UD3fFTj">Discord</a></li>
+<li><a href="https://hentai.tv/">Hentai.tv</a> - Hentai Streaming</li>
+<li><a href="https://hentaifox.tv/">HentaiFox.tv</a> - Hentai Streaming</li>
+<li><a href="https://animeidhentai.com/">AnimeIDHentai</a> - Hentai Streaming</li>
+<li><a href="https://hentaimama.io/">HentaiMama</a> - Hentai Streaming</li>
+<li><a href="https://hentai-moon.com/">Hentai Moon</a> - Hentai Streaming</li>
+<li><a href="https://hentaiplay.net/">HentaiPlay</a> - Hentai Streaming</li>
+<li><a href="https://hentaisea.com/">HentaiSea</a> - Hentai Streaming</li>
+<li><a href="https://aniporn.com/">AniPorn</a> - Hentai Streaming</li>
+<li><a href="https://hentaini.com/">Hentaini</a> - Hentai Streaming</li>
+<li><a href="https://miohentai.com/">MioHentai</a> - Hentai Streaming</li>
+<li><a href="https://hentaistream.xxx/">HentaiStream</a> - Hentai Streaming</li>
+<li><a href="https://uncensoredhentai.xxx/">Uncensored Hentai</a> - Hentai Streaming</li>
+<li><a href="https://hentaihaven.xxx/">Hentai Haven</a> - Hentai Streaming</li>
+<li><a href="https://hentaifreak.org/">HentaiFreak</a> - Hentai Streaming</li>
+<li><a href="https://haho.moe/">Haho</a> - Hentai Streaming</li>
+<li><a href="https://tube.hentaistream.com/">Hentai Stream</a> - Hentai Streaming <a href="https://discord.com/invite/Bkf4Nps">Discord</a></li>
+<li><a href="https://www.hentaicity.com/">Hentai City</a> - Hentai Streaming</li>
+<li><a href="https://hentaiyes.com/">HentaiYes</a> - Hentai Streaming</li>
+<li><a href="http://hentaigasm.com/">hentaigasm</a> - Hentai Streaming</li>
+<li><a href="https://hentaivideos.net/">HentaiVideos.net</a> - Hentai Streaming</li>
+<li><a href="https://hentaix.io/">HentaiX</a> - Hentai Streaming</li>
+<li><a href="https://www.underhentai.net/">UnderHentai</a> - Hentai Streaming</li>
+<li><a href="https://hentaiprn.com/">HentaiPRN</a> - Hentai Streaming</li>
+<li><a href="https://www.xanimeporn.com/">XAnimePorn</a> - Hentai Streaming</li>
+<li><a href="https://www.hentaitube.online/">HentaiTube.online</a> - Hentai Streaming</li>
+<li><a href="https://muchohentai.com/">MuchoHentai</a> - Hentai Streaming</li>
+<li><a href="https://www.hentaicloud.com/">HentaiCloud</a> - Hentai Streaming</li>
+<li><a href="https://www.hentais.tube/">HentaisTube</a> - Hentai Streaming</li>
+<li><a href="https://watchhentai.net/">Watch Hentai</a> - Hentai Streaming</li>
+<li><a href="https://hentaidude.com/">HentaiDude</a> - Hentai Streaming</li>
+<li><a href="https://hanime1.me/">HAnime</a> - Hentai Streaming</li>
+<li><a href="https://e-hentai.tube/">e-Hentai</a> - Hentai Streaming</li>
+<li><a href="https://latesthentai.com/">LatestHentai</a> - Hentai Streaming</li>
+<li><a href="https://www.cartoonpornvideos.com/">CartoonPornVideos</a> - Hentai Streaming</li>
+<li><a href="https://hentai2w.com/">Hentai2w</a> - Hentai Streaming</li>
+<li><a href="https://sakuracircle.com/">sakuracircle</a> - Hentai DDL</li>
+<li><a href="https://t.me/+4zMgLbnhiF5hZGRk">Hentai Upscales</a> - Hentai DDL</li>
+<li><a href="https://www.animetime.pw/">AnimeTime</a> - Hentai DDL</li>
+<li><a href="https://fapforfun.net/">FapForFun</a> - Hentai Torrents</li>
+<li><a href="https://www4.hentaila.com/">HentaiLA</a> - Spanish</li>
+<li><a href="https://mandrahentai.com/">MandraHentai</a> - Spanish / <a href="https://greasyfork.org/en/scripts/484990">Bypasser</a></li>
+<li><a href="https://ehpanda.app/">EhPanda</a> - Hentai iOS App</li>
+<li><a href="https://fapservice.com/">Fapservice</a> - Compilation of Echhi Anime Scenes / <a href="https://discord.com/invite/sTaEawE">Discord</a></li>
+</ul>
+<hr>
+<h3 id="cam-models">Cam Models</h3>
+<ul>
+<li>⭐ <strong><a href="https://archivebate.com/">Archivebate</a></strong></li>
+<li>⭐ <strong><a href="https://camcaps.ac/">CamCaps</a></strong></li>
+<li>⭐ <strong><a href="https://peachurnet.com/">Peachurbate</a></strong></li>
+<li><a href="https://curbate.tv/">Curbate</a></li>
+<li><a href="https://livecamrips.su/">LiveCamRips</a></li>
+<li><a href="https://www.cambro.tv/">CamBro</a></li>
+<li><a href="https://camsmut.com/">CamSmut</a></li>
+<li><a href="https://www.ecamrips.com">eCamRips</a></li>
+<li><a href="https://recu.me/">Recurbate</a>, <a href="https://recurbate1.com/">2</a></li>
+<li><a href="https://chaturflix.cam/">Chaturflix</a></li>
+<li><a href="https://www.camwhoresbay.com/">Camwhores Bay</a></li>
+<li><a href="https://bestcam.tv/">Bestcam</a></li>
+<li><a href="https://www.onscreens.me/">OnScreens</a></li>
+<li><a href="https://www.showcamrips.com/">ShowCamRips</a></li>
+<li><a href="https://www.cloudbate.com/">Cloudbate</a></li>
+<li><a href="https://www.webpussi.com/">Webpussi</a></li>
+<li><a href="https://camseek.tv/">CamSeek.TV</a></li>
+<li><a href="https://webcamrips.to/">WebcamRips</a></li>
+<li><a href="https://striphub.cam/">StripHub</a></li>
+<li><a href="https://cumcams.cc/">CumCams</a></li>
+<li><a href="https://www.camwhoreshd.com/">CamWhoresHD</a></li>
+<li><a href="https://sexkbj.com/">SexKbj</a> - Asian</li>
+<li><a href="https://sexbjcam.com/">sexbjcam</a> - Asian</li>
+<li><a href="https://kbjfree.com/">KBJFree</a> - Asian</li>
+<li><a href="https://www.kbjfan.com/">KBJFan</a> - Asian</li>
+<li><a href="https://koreanbj.club/">Korean BJ</a> - Asian</li>
+<li><a href="https://camgirlfinder.net/">CamGirlFinder</a> - Cam Model Database</li>
+</ul>
+<hr>
+<h2 id="download">Download</h2>
+<ul>
+<li>↪️ <strong><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/download">General DDL Sites</a></strong></li>
+<li><a href="https://search4porn.net/">Search4Porn</a> - NSFW File Search</li>
+<li><a href="https://github.com/estellaarrieta/aebn-vod-downloader">AEBN Downloader</a> - Downloader for <a href="https://www.aebn.com/">AEBN</a>  </li>
+<li><a href="https://stashdb.org/">StashDB</a> - Porn Database / <a href="https://pastebin.com/GWGXMBYW">Invite</a></li>
+<li><a href="https://0xxx.ws/">0xxx</a></li>
+<li><a href="https://www.siterips.org/">SiteRips</a></li>
+<li><a href="https://pornfactors.com/">PornFactors</a></li>
+<li><a href="https://pornorips.to/">PornoRips</a></li>
+<li><a href="https://xxxcollections.net/">XXXCollections</a></li>
+<li><a href="https://www.seaporn.org/">SeaPorn</a></li>
+<li><a href="https://skymovieshd.moe/index.php?dir=Hot-Short-Film&amp;sort=all">SkyMovies</a></li>
+<li><a href="https://www.bestpornstars.org/">BestPornstars</a></li>
+<li><a href="https://www.best-moviez.ws/category/porn-18/">Best-MovieZ</a></li>
+<li><a href="https://xdcc2.jav.pw/">xdcc2.jav</a> - JAV / IRC</li>
+</ul>
+<hr>
+<h3 id="communities">Communities</h3>
+<ul>
+<li><a href="http://pornoslon.me/">Pornoslon</a></li>
+<li><a href="https://pornbbs.org/">PornBBS</a></li>
+<li><a href="https://www.pornbb.org/forum">PornBB</a></li>
+<li><a href="https://eroticity.net/forum.php">Eroticity</a></li>
+<li><a href="http://www.planetsuzy.org/">PlanetSuzy</a></li>
+<li><a href="https://xfobo.com/index.php">xFobo</a></li>
+<li><a href="https://xbunker.nu/">xBunker</a></li>
+<li><a href="https://www.adultdvdtalk.com/">AdultDVDTalk</a></li>
+<li><a href="https://www.akiba-online.com/">Akiba</a></li>
+<li><a href="https://discord.gg/jdc">jdc</a> - JAV Discord</li>
+<li><a href="https://bdsmlr.com/">bdsmlr</a> - NSFW Tumblr Alternative</li>
+</ul>
+<hr>
+<h3 id="games">Games</h3>
+<ul>
+<li>🌐 <strong><a href="https://wotaku.wiki/nsfw#games">Wotaku</a></strong> - Eroge Index / <a href="https://discord.gg/vShRGx8ZBC">Discord</a></li>
+<li>🌐 <strong><a href="https://everythingmoe.com/?nsfw=true#section-games">EverythingMoe</a></strong>, <a href="https://everythingmoe.org/?nsfw=true#section-games">2</a> - Hentai Games Index</li>
+<li>⭐ <strong><a href="https://f95zone.to/">F95Zone</a></strong></li>
+<li>⭐ <strong><a href="https://sukebei.nyaa.si/">Nyaa Sukebei</a></strong></li>
+<li>⭐ <strong><a href="https://www.anime-sharing.com/#downloads-requests">Anime-Sharing</a></strong> - Hentai Games DDL</li>
+<li><a href="https://vnpocket.com">VNPocket</a></li>
+<li><a href="https://ryuugames.com/">Ryuugames</a></li>
+<li><a href="https://cpgrepacks.xyz/">CPG Repacks</a> - <a href="https://discord.gg/dtBSZ9N">Discord</a></li>
+<li><a href="https://www.asenheim.org">The Asenheim Project</a> / <a href="https://tss.asenheim.org/">Play Online</a></li>
+<li><a href="https://www.mikocon.com/forum.php?mod=forumdisplay&amp;fid=46">Mikocon</a></li>
+<li><a href="https://www.ggbases.com/">GGBases</a></li>
+<li><a href="https://dl.betterrepack.com/public/">BetterRepack</a> - <a href="https://discord.gg/pSGZ4uz">Discord</a></li>
+<li><a href="https://forum.69games.xxx/">69 Games</a></li>
+<li><a href="https://lewdcorner.com/">LewdCorner</a></li>
+<li><a href="https://jiggie.fun/">jiggie</a> - NSFW Custom Puzzles + Multiplayer</li>
+<li><a href="https://gamcore.com/">GamCore</a> - NSFW Browser Games</li>
+<li><a href="http://web.archive.org/web/20190515205509/https://www.lewdlist.com/">LewdList</a> - Game Index</li>
+<li><a href="https://lewdzone.com/">Lewdzone</a> - Games / Animations</li>
+<li><a href="https://lewdpatcher.com/">Lewd Patcher</a> - Adult Game Patches</li>
+<li><a href="https://www.loverslab.com/">Lovers Lab</a> - Adult Game Mods</li>
+<li><a href="https://www.nakedskins.com/">NakedSkins</a> - Naked Skins for Games</li>
+</ul>
+<hr>
+<h3 id="torrents">Torrents</h3>
+<ul>
+<li>↪️ <strong><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/torrent">General Torrent Sites</a></strong></li>
+<li>⭐ <strong><a href="https://myporn.club/">myporn.club</a></strong></li>
+<li>⭐ <strong><a href="https://xxxclub.to/">XXXCLub</a></strong> or <a href="https://torrentgalaxy.to/profile/NoisyBoY">NoisyBoY (Mirror)</a></li>
+<li>⭐ <strong><a href="https://sukebei.nyaa.si/">Nyaa Sukebei</a></strong> - JAV</li>
+<li>⭐ <strong><a href="https://projectjav.com/">ProjectJav</a></strong> - JAV</li>
+<li>⭐ <strong><a href="https://onejav.com/">OneJAV</a></strong> - JAV</li>
+<li>⭐ <strong><a href="https://www.141jav.com/">141Jav</a></strong> / <strong><a href="https://www.141ppv.com/">141PPV</a></strong> - JAV</li>
+<li>⭐ <strong><a href="https://nextjav.com/">Next JAV</a></strong> - JAV</li>
+<li>⭐ <strong><a href="https://en.xchina.co/">Xchina</a></strong> / <a href="https://pastebin.com/u4jcUYVq">Note</a> / <a href="https://pastebin.com/8DuageSv">Warning</a></li>
+<li><a href="https://xxxadulttorrent.org/">xXxAdultTorrent</a></li>
+<li><a href="https://www.sexy-pics.us/">Sexy-Pics</a></li>
+<li><a href="https://pornotorrent.top/">PornTorrent</a></li>
+<li><a href="https://www.sehuatang.net/">色花堂-98堂</a></li>
+<li><a href="https://pussytorrents.org/">pussytorrents</a></li>
+<li><a href="https://18mag.net/">18Mag</a></li>
+<li><a href="https://ssl.bootytape.com/">bootytape</a></li>
+<li><a href="https://pornolab.net/forum/index.php">PornoLab</a></li>
+<li><a href="https://lovetorrent.net/">LoveTorrent</a>, <a href="https://5pornotorrent.net/">2</a></li>
+<li><a href="https://pornrips.to/">PornRips</a> - HEVC Porn Rips</li>
+<li><a href="https://www.javbus.com/en">JavBus</a> - JAV</li>
+<li><a href="https://tokyo-tosho.net/">Tokyo Tosho</a> - JAV</li>
+<li><a href="https://javdb.com/">JAVdb</a> - JAV</li>
+<li><a href="https://myjavbay.com/">My JAV Bay</a> - JAV</li>
+<li><a href="https://javjunkies.org/main/">JAVJunkies</a> - JAV</li>
+<li><a href="https://www.cheggit.me/register.php">Cheggit</a> or <a href="https://www.happyfappy.org/users/register">HappyFappy</a> - Private Trackers / Open-Signups</li>
+<li><a href="https://www.srrxxx.com/">srrXXX</a> - Scene Release Tracker</li>
+</ul>
+<hr>
+<h2 id="images-reels">Images / Reels</h2>
+<ul>
+<li>⭐ <strong><a href="https://www.imagefap.com/">ImageFap</a></strong></li>
+<li>⭐ <strong><a href="https://nsfwmonster.com/">NSFWMonster</a></strong></li>
+<li>⭐ <strong><a href="https://fikfap.com/">FikFap</a></strong></li>
+<li>⭐ <strong><a href="https://fyptt.to/">fyptt</a></strong></li>
+<li><a href="https://www.redgifs.com/">redgifs</a>, <a href="https://gonewildbrowser.com/">Reddit Gone Wild</a> or <a href="https://reddxxx.com/">Reddxxx</a> - NSFW Subreddit Viewers</li>
+<li><a href="https://www.sex.com/">Sex.com</a></li>
+<li><a href="https://www.pornpics.com/">PornPics</a></li>
+<li><a href="https://realbooru.com/">Realbooru</a></li>
+<li><a href="https://vipergirls.to/">ViperGirls</a></li>
+<li><a href="https://pimpandhost.com/site/trending">PimpAndHost</a></li>
+<li><a href="https://pornedup.com/">PornedUp</a></li>
+<li><a href="https://www.v2ph.com/?hl=en">V2PH</a></li>
+<li><a href="https://xxxtik.com/">xxxtik</a></li>
+<li><a href="https://tik.porn/">Tik.porn</a></li>
+<li><a href="https://tikporn.tube/">TikPorn.tube</a></li>
+<li><a href="https://tiktits.com/">tiktits</a></li>
+<li><a href="https://onlytik.com/">OnlyTik</a></li>
+<li><a href="https://www.xfollow.com/">Xfollow</a></li>
+<li><a href="https://tik.pm/">Tik.pm</a></li>
+<li><a href="https://www.elitebabes.com/">EliteBabes</a></li>
+<li><a href="https://gifhq.com/">GifHQ</a></li>
+<li><a href="https://gifsauce.com/">GifSauce</a></li>
+<li><a href="https://www.metarthunter.com/">MetArtHunter</a></li>
+<li><a href="https://hardgif.com/">HardGIF</a></li>
+<li><a href="https://www.xfree.com/">xfree</a></li>
+<li><a href="https://fap.bar/">fap.bar</a></li>
+<li><a href="https://fiqfuq.com/">FIQFUQ</a></li>
+<li><a href="https://viralporn.com/">ViralPorn</a></li>
+<li><a href="https://nsfw.xxx/">nsfw.xxx</a></li>
+<li><a href="https://scrolller.com/">Scroller</a></li>
+<li><a href="https://nsfwswipe.com/v/6716209">NSFWSwipe</a></li>
+<li><a href="https://nsfwmonster.com/">NSFW Monster</a></li>
+<li><a href="https://www.simply-cosplay.com/">Simple-Costplay</a>, <a href="https://mitaku.net/">Mitaku</a> or <a href="https://nudecosplaygirls.com/">NudeCosplayGirls</a> - Cosplay Images</li>
+<li><a href="https://archiveofsins.com/hc/">ArchiveOfSins</a> - NSFW 4Chan Archive</li>
+<li><a href="https://www.faproulette.co/">Fap Roulette</a> - Random Roulette Images</li>
+<li><a href="https://www.boobpedia.com/">Boobpedia</a> - Boob Encyclopedia</li>
+</ul>
+<hr>
+<h3 id="leak-sites">Leak Sites</h3>
+<ul>
+<li>⭐ <strong><a href="https://hotleak.vip/">Hotleak</a></strong> - OnlyFans / Patreon</li>
+<li>⭐ <strong><a href="https://kemono.su/">Kemono</a></strong> or <a href="https://nekohouse.su/">nekohouse</a> - Patreon / <a href="https://github.com/notFaad/coom-dl">Downloader</a>, <a href="https://github.com/notFaad/coom-dl">2</a> / <a href="https://greasyfork.org/en/scripts/483259">Patreon Buttons</a></li>
+<li>⭐ <strong><a href="https://coomer.su/">Coomer</a></strong> - OnlyFans / <a href="https://github.com/notFaad/coom-dl">Downloader</a></li>
+<li>⭐ <strong><a href="https://simpcity.su/">SimpCity</a></strong> - OnlyFans / Patreon</li>
+<li><a href="https://cse.google.com/cse?cx=d638aa7da557546d5">Leak CSE</a></li>
+<li><a href="https://ososedki.com/">OSosedki</a> - OnlyFans / Patreon</li>
+<li><a href="https://redditplug.com/">Reddit Plug</a> - OnlyFans</li>
+<li><a href="https://erothots.co/">EroThots</a> - OnlyFans</li>
+<li><a href="https://vipergirls.to/">ViperGirls</a> - OnlyFans / Patreon</li>
+<li><a href="https://pornleaks.in/">PornLeaks</a> or <a href="https://vixenleaks.com/">Vixenleaks</a> - OnlyFans / Patreon</li>
+<li><a href="https://faponic.com/">Faponic</a> - OnlyFans / Patreon</li>
+<li><a href="https://nobodyhome.tv/index.php">NobodyHome</a> - OnlyFans</li>
+<li><a href="https://vlixa.com/">Vlixa</a> - OnlyFans</li>
+<li><a href="https://nudostar.tv/">Nudostar</a> - OnlyFans</li>
+<li><a href="https://fapello.com/">Fapello</a> - OnlyFans</li>
+<li><a href="https://rentry.org/OnlyFan421">OnlyFans421</a> - OnlyFans</li>
+<li><a href="https://t.me/channelfreepack">Channel Free Pack</a> - OnlyFans</li>
+<li><a href="https://x-x-x.tube/">xxxTube</a> or <a href="https://x-x-x.video/">xxxVideo</a> - OnlyFans / Use Adblocker</li>
+<li><a href="https://thothub.to/">ThotHub</a>, <a href="https://thothub.org/">2</a>, <a href="https://thothub.lol/">3</a>, <a href="https://thothub.is/">4</a>, <a href="https://thothub.win/">5</a>, <a href="https://thothub.mx/">6</a>, <a href="https://thothub.ch/">7</a>, <a href="https://thethothub.com/">8</a>, <a href="https://thothub.info/">9</a> - OnlyFans</li>
+<li><a href="https://github.com/datawhores/OF-Scraper">OF-Scraper</a> or <a href="https://github.com/sim0n00ps/OF-DL">OF-DL</a> - OnlyFans Scrapers</li>
+</ul>
+<hr>
+<h3 id="magazines">Magazines</h3>
+<ul>
+<li>⭐ <strong><a href="https://archive.org/details/mensmagazines_post70s">Mens Magazines</a></strong> - NSFW Magazine Archives (1970s-modern)</li>
+<li><a href="https://spicymags.xyz/">SpicyMags</a></li>
+<li><a href="https://downmagaz.net/adult_magazine/">downmagaz</a></li>
+<li><a href="https://pdfdude.com/category/adult/">PDF Dude</a></li>
+<li><a href="https://www.mags.guru/c/adult/">Mags Guru</a></li>
+<li><a href="https://adultload.ws/category/magazines/">adultload</a></li>
+<li><a href="https://adultmagazine.net/">AdultMagazine</a></li>
+<li><a href="https://adultmagazinespdf.com/">Adult Magazines PDF</a></li>
+<li><a href="https://redd.it/ouuakm">v9k9 Mags</a> - Japanese Magazines</li>
+<li><a href="https://pdfmagazines.club/adult">pdfmagazinesclub</a></li>
+</ul>
+<hr>
+<h3 id="hentai-manga-comics">Hentai Manga / Comics</h3>
+<ul>
+<li>🌐 <strong><a href="https://wotaku.wiki/nsfw#manga">Wotaku</a></strong> - Hentai Manga Index / <a href="https://discord.gg/vShRGx8ZBC">Discord</a></li>
+<li>🌐 <strong><a href="https://everythingmoe.com/?nsfw=true#section-hentairead">EverythingMoe</a></strong>, <a href="https://everythingmoe.org/?nsfw=true#section-hentairead">2</a> - Hentai Manga / Comics Index</li>
+<li>🌐 <strong><a href="https://wholesomelist.com/">Wholesome Hentai</a></strong> - Wholesome Manga Index</li>
+<li>⭐ <strong><a href="https://e-hentai.org/">E-Hentai</a></strong> or <a href="https://exhentai.org/">ExHentai</a> - Hentai Manga / Comics </li>
+<li>⭐ <strong>E-Hentai Tools</strong> - <a href="https://github.com/honjow/FEhViewer">Android Client</a> / <a href="https://panda.chaika.moe/">Deleted Galleries</a> / <a href="https://gitlab.com/squishydreams/pandaforever">Downloader</a>, <a href="https://github.com/ccloli/E-Hentai-Downloader">2</a></li>
+<li>⭐ <strong><a href="https://niyaniya.moe/">SchaleNetwork</a></strong> / <a href="https://niyaniya.moe/wiki/mirrors">Mirrors</a> or <strong><a href="https://hentainexus.com/">HentaiNexus</a></strong> - Official Translatations</li>
+<li>⭐ <strong><a href="https://hitomi.la/">Hitomi</a></strong> - Hentai Manga</li>
+<li>⭐ <strong><a href="https://nhentai.net/">NHentai</a></strong> - Hentai Manga</li>
+<li>⭐ <strong>NHentai Tools</strong> - <a href="https://github.com/Dar9586/NClientV2">Android Client</a>, <a href="https://ttdyce.com/apps/nhviewer/">2</a> / <a href="https://github.com/RicterZ/nhentai">Downloader</a>, <a href="https://nhentaidownloader.zirk.eu/">2</a>, <a href="https://github.com/9-FS/nhentai_archivist">3</a> / <a href="https://github.com/grillgamesh/NHentai-Favorites-Archiver">Favorites Archiver</a></li>
+<li>⭐ <strong><a href="https://mangadistrict.com/">Manga District</a></strong> - Pornhwa</li>
+<li>⭐ <strong><a href="https://xbato.org/">BATO.TO</a></strong> - Pornhwa / <a href="https://discord.com/invite/batoto">Discord</a> / <a href="https://rentry.co/batoto">Proxies</a></li>
+<li>⭐ <strong><a href="https://sukebei.nyaa.si/">Nyaa Sukebei</a></strong> - Hentai Manga Torrents</li>
+<li>⭐ <strong><a href="https://github.com/KurtBestor/Hitomi-Downloader">Hitomi Downloader</a></strong>, <a href="https://github.com/MapoMagpie/eh-view-enhance">EH View</a> <strong><a href="https://hakuneko.download/">Hakuneko</a></strong> or <a href="https://github.com/Official-Husko/NN-Downloader">NN Downloader</a> - Multi-Site Downloaders</li>
+<li><a href="https://www.reddit.com/r/Pornwha/">/r/Pornwha</a> or <a href="https://www.reddit.com/r/pornhwa/">/r/Pornhwa</a> - Pornwha / Pornhwa Subreddits</li>
+<li><a href="https://imhentai.xxx/">IMHentai</a> - Hentai Manga / Comics</li>
+<li><a href="https://3hentai.net/">3Hentai</a> - Hentai Manga</li>
+<li><a href="https://hentai2read.com/">Hentai2Read</a> or <a href="https://hentaihere.com/">HentaiHere</a> - Hentai Manga</li>
+<li><a href="https://doujins.com/">Doujins.com</a> - Hentai Manga / <a href="https://discord.com/invite/EPnJqPf7xh">Discord</a></li>
+<li><a href="https://www.luscious.net/">Luscious</a> - Hentai Manga / Comics</li>
+<li><a href="https://www.simply-hentai.com/web">Simply Hentai</a> - Hentai Manga</li>
+<li><a href="https://hentaienvy.com/">HentaiEnvy</a> - Hentai Manga / Comics</li>
+<li><a href="https://hentaiera.com/">HentaiEra</a> - Hentai Manga</li>
+<li><a href="https://yabai.si/">Yabai</a> - Hentai Manga</li>
+<li><a href="https://hentairead.com/">HentaiRead</a> - Hentai Manga</li>
+<li><a href="https://hentaihand.com/en/">HentaiHand</a> - Hentai Manga</li>
+<li><a href="https://hentaizap.com/">HentaiZap</a> - Hentai Manga</li>
+<li><a href="https://18kami.com/">18Kami</a> - Hentai Manga</li>
+<li><a href="https://akuma.moe/">akuma</a> - Hentai Manga</li>
+<li><a href="https://mangahentai.me/">MangaHentai</a> - Hentai Manga</li>
+<li><a href="https://toonily.me/">Toonily</a> - Pornhwa</li>
+<li><a href="https://manhwa18.net/">Manhwa18</a> / <a href="https://manhwa18.com/">2</a> / <a href="https://pornwa.club/">3</a> - Pornhwa</li>
+<li><a href="https://multporn.net/">Multporn</a> - Hentai Manga / Comics</li>
+<li><a href="https://hentaifox.com/">HentaiFox</a> - Hentai Manga</li>
+<li><a href="https://pururin.to/">Pururin</a> - Hentai Manga / <a href="https://discord.com/invite/PtrzM4aVFv">Discord</a></li>
+<li><a href="https://9hentai.to/">9Hentai</a> - Hentai Manga</li>
+<li><a href="https://asmhentai.com/">AsmHentai</a> - Hentai Manga</li>
+<li><a href="https://8muses.io/">8Muses</a> - Hentai Manga / Comics</li>
+<li><a href="https://comicporn.xxx/">Comic Porn XXX</a> - Hentai Manga / Comics</li>
+<li><a href="https://xlecx.one/">XlecX</a> - Hentai Manga / Comics</li>
+<li><a href="https://hentairox.com/">HentaiRox</a> - Hentai Manga</li>
+<li><a href="https://hentalk.pw/">HenTalk</a> - Hentai Manga</li>
+<li><a href="https://eahentai.com/">EAHentai</a> - Hentai Manga</li>
+<li><a href="https://ilikecomix.com/">ILikeComix</a> - Comics</li>
+<li><a href="https://allporncomic.com/">AllPornComic</a> - Comics</li>
+<li><a href="https://myhentaigallery.com/">MyHentaiGallery</a> - Comics / <a href="https://discord.com/invite/h2cmkc64k8">Discord</a></li>
+<li><a href="https://freeadultcomix.com/">FreeAdultComix</a> - Comics</li>
+<li><a href="https://mult34.com/">Mult34</a> - Comics</li>
+<li><a href="https://comicsvalley.com/">ComicsValley</a> - Comics</li>
+<li><a href="https://www.erofus.com/">Erofus</a> - Comics / <a href="https://discord.com/invite/ZKCV4CmhaD">Discord</a></li>
+<li><a href="https://svscomics.com/">SVSComics</a> - Comics</li>
+<li><a href="https://bestporncomix.com/">BestPornComix</a> - Comics</li>
+<li><a href="https://bondagecomixxx.net/">BondageComixxx</a> - Comics</li>
+<li><a href="https://xyzcomics.com/">XYZ Porn Comics</a> - Comics</li>
+<li><a href="https://manhwa18.cc/">Manhwa18.cc</a> - Hentai Manga</li>
+<li><a href="https://mangadass.com/">Mangadass</a> - Hentai Manga</li>
+<li><a href="https://hentaiwebtoon.com/">Hentaiwebtoon</a> - Hentai Manga</li>
+<li><a href="https://omegascans.org/">OmegaScans</a> - Pornwha / <a href="https://discord.com/invite/BrkUm8jeng">Discord</a></li>
+<li><a href="https://www.mikocon.com/forum.php?mod=forumdisplay&amp;fid=46">Mikocon</a> - Hentai Manga</li>
+<li><a href="https://www.anime-sharing.com/forum/hentai-ovas-36/">Anime-Sharing Hentai</a> - Hentai Manga</li>
+<li><a href="https://nyahentai.re/">NyaHentai</a> or <a href="https://momon-ga.com/">momon-ga</a> - Hentai Manga / Japanese Raws</li>
+<li><a href="https://www.comicbox.xyz/">ComicBox</a> - Chinese Pornhwa</li>
+<li><a href="https://tmohentai.com/">TMOHentai</a> - Spanish Hentai Manga</li>
+<li><a href="https://www.manhwas.net/">Manhwas</a> - Spanish Pornhwa</li>
+<li><a href="https://mihentai.com/">Mihentai</a> - Indo Hentai Manga</li>
+<li><a href="https://www.anime-sharing.com/#downloads-requests">Anime-Sharing</a> - Hentai Manga Forums</li>
+<li><a href="https://androidvisualnovels2.wordpress.com/">AVN2</a> - Android Visual Novels / <a href="https://discord.com/invite/tn3fAPt">Discord</a></li>
+<li><a href="https://hentaiser.com/en/">Hentaiser</a> - Android Hentai</li>
+<li><a href="https://github.com/project-violet/violet">Violet</a> - Android Hentai / <a href="https://discord.com/invite/fqrtRxC">Discord</a></li>
+<li><a href="https://github.com/avluis/Hentoid">Hentoid</a> - Android Hentai / <a href="https://discord.com/invite/QEZ3qk9">Discord</a></li>
+<li><a href="https://github.com/RobbWatershed/GalleryCherry">GalleryCherry</a> - Android Hentai / <a href="https://discord.com/invite/waTF8vw">Discord</a></li>
+</ul>
+<hr>
+<h3 id="illustrations">Illustrations</h3>
+<ul>
+<li>⭐ <strong><a href="https://www.pixiv.net/en/">Pixiv</a></strong> / <a href="https://pixiv.navirank.com/">Rankings</a></li>
+<li>⭐ <strong><a href="https://gelbooru.com/">Gelbooru</a></strong></li>
+<li>⭐ <strong><a href="https://www.hentai-foundry.com/">Hentai Foundry</a></strong> / <a href="https://discord.com/invite/gMtgEcZuk4">Discord</a></li>
+<li><a href="https://kemono.su/">kemono.party</a> / <a href="https://github.com/notFaad/coom-dl">Downloader</a></li>
+<li><a href="https://yande.re/">yande.re</a></li>
+<li><a href="https://konachan.com/">Konachan</a></li>
+<li><a href="https://beta.sankakucomplex.com/tag/en">Sankaku Complex</a></li>
+<li><a href="https://kusowanka.com/">Kurowanka</a></li>
+<li><a href="https://nozomi.la/">Nozomi.la</a></li>
+<li><a href="https://slushe.com/">Slushe</a> / <a href="https://discord.com/invite/GYjEXqeXSJ">Discord</a></li>
+<li><a href="https://tbib.org/">TBIB</a></li>
+<li><a href="https://xbooru.com/">Xbooru</a></li>
+<li><a href="https://thehentaiworld.com/">The Hentai World</a></li>
+<li><a href="https://danbooru.donmai.us/">Danbooru</a> / <a href="https://github.com/shadybrady101/R34-Danbooru-media-downloader">Downloader</a></li>
+<li><a href="https://whentai.com/">WHentai</a></li>
+<li><a href="https://rule34.pw/">Rule34 Scroller</a></li>
+<li><a href="https://rule34.xxx/">Rule 34</a></li>
+<li><a href="https://rule34.paheal.net/">Rule 34 Paheal</a></li>
+<li><a href="https://rule34.xyz/">Rule34.xyz</a> / <a href="https://discord.com/invite/GVfjtug">Discord</a></li>
+<li><a href="https://rule34.us/">Rule34.us</a></li>
+<li><a href="https://rule34hentai.net/">Rule34Hentai</a></li>
+<li><a href="https://rule34.world/">Rule34World</a></li>
+<li><a href="https://rule34.dev/">Rule34.dev</a> - Multi-Booru Aggregator</li>
+<li><a href="https://smutba.se/">SmutBase</a> - NSFW 3D Models</li>
+<li><a href="http://owmvhpxyisu6fgd7r2fcswgavs7jly4znldaey33utadwmgbbp4pysad.onion/">Permanent Booru</a></li>
+<li><a href="http://ik4kzum3ocg6dhx4jhzteko4jzijmxnwsbkcqenf33as3i74i3mcb3id.onion/">mcb3id.onion</a></li>
+<li><a href="https://github.com/flexbooru/flexbooru">Flexbooru</a>, <a href="https://github.com/nullxception/boorusphere">BooruSphere</a>, <a href="https://github.com/Yochyo/Yummybooru">Yummybooru</a>, <a href="https://github.com/nullxception/boorusphere">boorusphere</a>, <a href="https://github.com/khoadng/Boorusama">Boorusama</a> / <a href="https://discord.gg/tvyYVxjfBr">Discord</a> or <a href="https://animebox.es/">Animes Boxes</a> - Booru Clients / <a href="https://t.me/Flexbooru/161">Telegram</a></li>
+<li><a href="https://r34.app/">Rule 34 App</a> - PWA Booru Client</li>
+<li><a href="https://www.boobbot.us/">Boob Bot</a> or <a href="https://github.com/jbsparrow/CyberDropDownloader">CyberDropDownloader</a> - Image Downloaders</li>
+<li><a href="https://github.com/Bionus/imgbrd-grabber">imgbrd-grabber</a> - Booru Image Downloader</li>
+</ul>
+<hr>
+<h3 id="ai-generated-images">AI Generated Images</h3>
+<ul>
+<li><a href="https://trynectar.ai/create">Nectar</a> / <a href="https://discord.gg/4u2jFcz5VN">Discord</a></li>
+<li><a href="https://made.porn/">Made.Porn</a> / <a href="https://discord.com/invite/TE5eUxU2mz">Discord</a></li>
+<li><a href="https://editor.imagelabs.net/">PornLabs</a> / <a href="https://discord.com/invite/RJX9FWWAsn">Discord</a></li>
+<li><a href="https://pornify.cc/">Pornify</a></li>
+<li><a href="https://aihentai.co/">AIHentai.co</a></li>
+<li><a href="https://spicy.porn/">Spicy Porn</a></li>
+<li><a href="https://pornderful.ai/">Pornderful</a></li>
+<li><a href="https://pornai.tv/">PornAI.tv</a></li>
+<li><a href="https://sexy.ai/">sexy.ai</a></li>
+<li><a href="https://rentry.org/hdgfaq">HDG Faq</a> - HDG Guide</li>
+<li><a href="https://www.reddit.com/r/AIpornhub/">r/AIpornhub</a> - NSFW AI Subreddit</li>
+</ul>
+<hr>
+<h2 id="erotica-fanfiction">Erotica / Fanfiction</h2>
+<ul>
+<li><a href="https://www.literotica.com/">Literotica</a> - Fictional</li>
+<li><a href="https://chyoa.com/">Chyoa</a> - Fictional</li>
+<li><a href="https://www.bellesa.co/story/all">Bellesa</a> - Fictional</li>
+<li><a href="https://sexualstories.club/">SexualStories</a> - Fictional</li>
+<li><a href="https://www.thefetlibrary.com/">TheFetLibrary</a> - Fictional</li>
+<li><a href="https://forum.questionablequesting.com/">QuestionableQuestingQ</a> - Fictional / Signup Required</li>
+<li><a href="https://www.adult-fanfiction.org/">Adult-Fanfiction</a> - Fictional</li>
+<li><a href="https://www.hyperdreams.com/">HyperDreams</a> - Fictional / Interactive</li>
+<li><a href="https://infaera.neocities.org/">Infaera</a> - Fictional / Interactive</li>
+<li><a href="https://erofights.com/">EroFights</a> - Fictional / Chat-Based</li>
+<li><a href="https://storiesonline.net/">StoriesOnline</a> - Fictional / Non-Fic</li>
+<li><a href="https://www.indiansexstories2.net/">IndianSexStories</a> - Fictional / Non-Fic</li>
+<li><a href="https://www.sexstories.com/">Sex Stories</a> - Fictional / Non-Fic</li>
+<li><a href="https://www.lushstories.com/">LushStories</a> - Fictional / Non-Fic</li>
+</ul>
+<hr>
+<h2 id="lgbtq-">LGBTQ+</h2>
+<ul>
+<li>🌐 <strong><a href="https://mygaysites.com/">MyGaySites</a></strong> - Gay Porn Site Index</li>
+<li><a href="https://www.playhdporn.com/categories/gay/">PlayHDPorn Gay</a></li>
+<li><a href="https://boyfriend.tv/">Boyfriend.tv</a></li>
+<li><a href="https://www.gold-gay.com/">Gold Gay</a></li>
+<li><a href="https://javboys.com/">JAVBoys</a> - Gay JAV</li>
+<li><a href="https://www.gay-torrents.net/">Gay Torrents</a> - Torrents / Use VPN</li>
+<li><a href="https://yupdates.neocities.org/">Yupdates</a> - Gay Porn Artwork / <a href="https://cat.yupdates.art/">Drives</a> / <a href="https://discord.com/invite/ECFKuBawQg">Discord</a></li>
+<li><a href="https://pbc.xxx/">PBC</a> - Gay Porn Encyclopedia</li>
+<li><a href="https://myreadingmanga.info/">MyReadingManga</a> - LGBTQ+ Hentai</li>
+<li><a href="https://www.nifty.org/nifty/">Nifty</a> - LGBT / Fictional</li>
+<li><a href="https://fictionmania.tv/">FictionMania</a> - Transgender / Fictional</li>
+<li><a href="https://transvids.wtf/">TransVids</a> - OnlyFans / Patreon</li>
+</ul>
+<hr>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>⭐ <strong><a href="https://stashapp.cc/">Stash</a></strong>, <a href="https://github.com/pronopython/fapel-system">Fapel System</a>, <a href="https://gitlab.com/porn-vault/porn-vault">Porn Vault</a> or <a href="https://github.com/adultmm/AdultMediaManager">AdultMediaManager</a> - Porn File Managers</li>
+<li>⭐ <strong><a href="https://pornstarbyface.com/">PornStarByFace</a></strong> - NSFW Image Reverse Search</li>
+<li>⭐ <strong><a href="https://saucenao.com/">SauceNao</a></strong> - Fictional NSFW Reverse Image Search / <a href="https://saucenao.com/tools/">Extension</a></li>
+<li>⭐ <strong><a href="https://www.iafd.com/">Internet Adult Film Database</a></strong>, <a href="https://www.data18.com/">Data18</a>, <a href="https://www.mypornstarbook.net/">MyPornStarBook</a>, <a href="http://warashi-asian-pornstars.fr/">Warashi</a> or <a href="https://avsox.click/en">AVSOX</a> - Adult Film Databases / Reviews</li>
+<li>⭐ <strong><a href="https://namethatporn.com/">NameThatPorn</a></strong>, <a href="https://namethatpornstar.com/">NameThatPornstar</a>, <a href="https://www.reddit.com/r/pornID/">r/pornID</a> or <a href="https://www.reddit.com/r/tipofmypenis/">r/tipofmypenis</a> - Porn Identification Communities</li>
+<li>⭐ <strong><a href="https://pastebin.com/gAAEQnqn">Bypass Subreddit Blocks</a></strong></li>
+<li><a href="https://github.com/javinizer/Javinizer">Javinizer</a> - JAV File Organizer</li>
+<li><a href="https://github.com/HypoX64/DeepMosaics">DeepMosaics</a> - Remove Mosaics from Porn</li>
+<li><a href="https://metadataapi.net/">ThePornDB</a> - Porn Metadata</li>
+<li><a href="https://sleazyfork.org/en/scripts">Sleazy Fork</a> - Adult User Scripts / <a href="https://greasyfork.org/en/scripts/23840">Add to Greasyfork</a></li>
+<li><a href="https://github.com/regdude/anal">Anal Sex Guide</a> - Anal Sex Guide / Safety</li>
+<li><a href="https://pury.fi/site/">Pury.fi</a> / <a href="https://discord.gg/9aBBJNEJGC">Discord</a> / <a href="https://github.com/pury-fi">GitHub</a> or <a href="https://github.com/silveredgold/beta-censoring">beta-censoring</a> - Censor NSFW Images</li>
+</ul>
+<hr>
+<h2 id="-porn-quitting-https-www-reddit-com-r-freemediaheckyeah-wiki-misc-wiki_-25b7_porn_quitting-"><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/misc#wiki_.25B7_porn_quitting">Porn Quitting</a></h2>
+<hr>
+<p><strong><a href="https://rentry.co/freemediafuckyeah">^ Back to Top</a></strong></p>
