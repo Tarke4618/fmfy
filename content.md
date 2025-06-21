@@ -28,8 +28,8 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css?vsson=31">
-    <link rel="manifest" href="/static/manifest.json?vsson=31">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css?vsson=32">
+    <link rel="manifest" href="/static/manifest.json?vsson=32">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLFSDKZXET"></script>
     <script>
@@ -48,6 +48,7 @@
 </head>
 
 <body class="m-0 p-0 body">
+    <div>
 
 
     <div class="sub-body">
@@ -62,7 +63,7 @@
                     <h2 class="h5" id="wat">Access Code Required</h2>
                     <p class="redirect"><span class="intro">Redirecting to page: </span> <span class="time"></span> <button type="button">Cancel</button></p>
                     <p>To access the raw version of this page, a valid access code must be set in the metadata: SECRET_RAW_ACCESS_CODE.</p>
-                    <p>You may request an access code by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2919792928d9096a290878c96909bcc818d">[email&#160;protected]</a></p>
+                    <p>You may request an access code by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8abada8a8b7aaac98aabdb6acaaa1f6bbb7">[email&#160;protected]</a></p>
                     <p>An access code may be used on any number of pages.</p>
                     <p>You may also use this access code as a header in your request, which will give you access to any post's /raw/ page.</p>
                     <p>This system was a necessary addition due to extensive misuse by bad actors posting malware snippets and getting us into a lot of trouble with our web hosts and domain registrars.</p>
@@ -87,10 +88,11 @@
             </div>
         </div>
 
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/static/js/jquery.min.js?vsson=31"></script>
-        <script src="/static/js/bootstrap.min.js?vsson=31"></script>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/static/js/jquery.min.js?vsson=32"></script>
+        <script src="/static/js/bootstrap.min.js?vsson=32"></script>
         
     </div>
+</div>
 </body>
 
 </html>
