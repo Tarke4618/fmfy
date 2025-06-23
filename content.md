@@ -63,7 +63,7 @@
                     <h2 class="h5" id="wat">Access Code Required</h2>
                     <p class="redirect"><span class="intro">Redirecting to page: </span> <span class="time"></span> <button type="button">Cancel</button></p>
                     <p>To access the raw version of this page, a valid access code must be set in the metadata: SECRET_RAW_ACCESS_CODE.</p>
-                    <p>You may request an access code by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5b6b0b5b5aab7b185b7a0abb1b7bceba6aa">[email&#160;protected]</a></p>
+                    <p>You may request an access code by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5c6c0c5c5dac7c1f5c7d0dbc1c7cc9bd6da">[email&#160;protected]</a></p>
                     <p>An access code may be used on any number of pages.</p>
                     <p>You may also use this access code as a header in your request, which will give you access to any post's /raw/ page.</p>
                     <p>This system was a necessary addition due to extensive misuse by bad actors posting malware snippets and getting us into a lot of trouble with our web hosts and domain registrars.</p>
